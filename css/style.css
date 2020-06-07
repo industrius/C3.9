@@ -14,7 +14,7 @@ fieldset{
     min-width: 255px;
 }
 
-h1{
+h2{
     margin: 20px 0;
     max-width: 250px;
     word-wrap: break-word;
@@ -40,6 +40,10 @@ li{
     margin-bottom: 5px;
 }
 
+label:hover{
+    color: rgb(0, 151, 0);
+}
+
 .wrapper{
     margin: 0 auto;
     max-width: 80vw;
@@ -49,5 +53,9 @@ li{
 
 .hide{
     display: none;
+}
+
+.reset{
+    margin: 30px;
 }
 
