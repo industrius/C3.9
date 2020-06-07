@@ -1,0 +1,53 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    margin: 20px 0;
+    padding: 0;
+    background-color: rgb(250, 250, 250);
+    color: rgb(51, 53, 43);
+}
+
+fieldset{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 255px;
+}
+
+h1{
+    margin: 20px 0;
+    max-width: 250px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+input{
+    font-size: 18px;
+    line-height: 29px;
+}
+
+button{
+    font-size: 18px;
+    line-height: 32px;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+}
+
+li{
+    margin-bottom: 5px;
+}
+
+.wrapper{
+    margin: 0 auto;
+    max-width: 80vw;
+    display: flex;
+    justify-content: center;
+}
+
+.hide{
+    display: none;
+}
+
