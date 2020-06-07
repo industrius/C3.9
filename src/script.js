@@ -4,8 +4,9 @@ const city_reset_btn = document.querySelector(".city_show_btn")
 const cookie = {
     set: function(value){
         document.cookie = "city_name=" + encodeURIComponent(value) + "; path=/; max-age=3600)"
-        let matches = document.cookie.match(new RegExp('(?:^|\s)' + "city_name" + '=(.*?)(?:;|$)'));
-        return matches ? "cookie created" : undefined;
+        // let matches = document.cookie.match(new RegExp('(?:^|\s)' + "city_name" + '=(.*?)(?:;|$)'));
+        // return matches ? "cookie created" : undefined;
+        return cookie.get() ? "cookie created" : undefined;
     },
     get: function(){
         let matches = document.cookie.match(new RegExp('(?:^|\s)' + "city_name" + '=(.*?)(?:;|$)'));
@@ -13,8 +14,9 @@ const cookie = {
     },
     del: function(){
         document.cookie = "city_name=''; path=/; max-age=-1"
-        let matches = document.cookie.match(new RegExp('(?:^|\s)' + "city_name" + '=(.*?)(?:;|$)'));
-        return matches ? undefined : "cookie removed";
+        // let matches = document.cookie.match(new RegExp('(?:^|\s)' + "city_name" + '=(.*?)(?:;|$)'));
+        // return matches ? undefined : "cookie removed";
+        return cookie.get() ? undefined : "cookie removed";
     }
 }
 
@@ -37,7 +39,7 @@ city_reset_btn.addEventListener("click", () => {
 function init(){
     let city_name = cookie.get()
     if (city_name){
-        console.log("found cookie, value is - " + city_name)
+        console.log("found cookie, Value is: " + city_name)
         city_show_text.textContent = city_name
     }else{
         console.log("not found cookie")
