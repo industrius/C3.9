@@ -1,11 +1,11 @@
 const city_input = document.querySelector(".city_input")
 const city_show_text = document.querySelector(".city_show_text")
 const city_reset_btn = document.querySelector(".city_show_btn")
+document.querySelectorAll('[type="checkbox"]').addEventListener("checked", saveCheckBox)
+
 const cookie = {
     set: function(value){
         document.cookie = "city_name=" + encodeURIComponent(value) + "; path=/; max-age=3600)"
-        // let matches = document.cookie.match(new RegExp('(?:^|\s)' + "city_name" + '=(.*?)(?:;|$)'));
-        // return matches ? "cookie created" : undefined;
         return cookie.get() ? "cookie created" : undefined;
     },
     get: function(){
@@ -14,8 +14,6 @@ const cookie = {
     },
     del: function(){
         document.cookie = "city_name=''; path=/; max-age=-1"
-        // let matches = document.cookie.match(new RegExp('(?:^|\s)' + "city_name" + '=(.*?)(?:;|$)'));
-        // return matches ? undefined : "cookie removed";
         return cookie.get() ? undefined : "cookie removed";
     }
 }
@@ -43,12 +41,13 @@ function init(){
         city_show_text.textContent = city_name
     }else{
         console.log("not found cookie")
+        city_input.value = ""
+        city_show_text.value = ""
         city_input.classList.toggle("hide")
         city_show_text.classList.toggle("hide")
         city_reset_btn.classList.toggle("hide")
     }
-    city_input.value = ""
-    city_show_text.value = ""
+
 };
 
 document.addEventListener("DOMContentLoaded", function(event){
